@@ -107,11 +107,3 @@ class Chromosome(object):
     def decode(self):
 
         return [codons[k] for k in self.chromosome]
-
-if __name__ == '__main__':
-    
-    c = Chromosome(15)
-    c.random()
-
-    print(c)
-    print(c.decode())
