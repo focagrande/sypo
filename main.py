@@ -1,6 +1,6 @@
 from __future__ import print_function
 
-from sypo import Chromosome
+from sypo.chromosome import Chromosome
 
 if __name__ == '__main__':
     
