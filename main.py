@@ -1,11 +1,10 @@
 from __future__ import print_function
 
-# from sypo.chromosome import Chromosome
-import sypo
+from sypo.chromosome import Chromosome
 
 if __name__ == '__main__':
     
-    c = sypo.Chromosome(15)
+    c = Chromosome(15)
     c.random()
 
     print(c)
