@@ -1,5 +1,5 @@
 import unittest
-from sypo.chromosome import Chromosome
+import sypo
 
 class TestSypo(unittest.TestCase):
 

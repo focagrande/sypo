@@ -1,18 +1,26 @@
 #!/usr/bin/env python
 
-from setuptools import setup
-from setuptools.command.test import test as TestCommand
 
-class PyTest(TestCommand):
-    def finalize_options(self):
-        TestCommand.finalize_options(self)
-        self.test_args = []
-        self.test_suite = True
+try:
+    from setuptools import setup
+    from setuptools.command.test import test as TestCommand
 
-    def run_tests(self):
-        import pytest
-        errcode = pytest.main(self.test_args)
-        sys.exit(errcode)
+    class PyTest(TestCommand):
+        def finalize_options(self):
+            TestCommand.finalize_options(self)
+            self.test_args = []
+            self.test_suite = True
+
+        def run_tests(self):
+            # import here, because outside the eggs aren't loaded
+            import pytest
+            errno = pytest.main(self.test_args)
+            sys.exit(errno)
+
+except ImportError:
+    
+    from distutils.core import setup
+    def PyTest(x): x
 
 setup(name='Sypo',
       version='1.0',
