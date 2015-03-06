@@ -1,11 +1,11 @@
 from __future__ import print_function
 
-from sypo.chromosome import Chromosome
+from sypo.population import Population
 
 if __name__ == '__main__':
     
-    c = Chromosome(15)
-    c.random()
+    p = Population(5, 10)
+    p.populate()
 
-    print(c)
-    print(c.decode())
+    for k in p.population:
+        print('{} => {}'.format(k, k.decode()))
